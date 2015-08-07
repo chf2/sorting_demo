@@ -4,7 +4,7 @@ It should be clear now that for any moderately large inputs, algorithms
 that run in O(n*lg(n)) time will significantly outperform those that run 
 in O(n^2). 
 
-[Picture of time complexity]
+![time_complexity](./nlgn_vs_n2.gif)
 
 While one of the goals of algorithm analysis is to stay agnostic of 
 implementaion details, let's briefly take a look at what this means in
@@ -61,4 +61,9 @@ Now, run Bubble Sort.
 
 While this runs, let's think about a few things. Can you give a rough estimate
 of how long this will take, even with randomized input? What factors would go
-into whether your estimate would be high or low? 
+into whether your estimate would be high or low?
+
+50,000 elements is not that many. Even a relatively small real-world application
+that used suboptimal algorithms to process data will take a huge performance 
+hit. Go ahead and play around with the input size a bit more. Approximately how
+long will it take to run this for 100,000 elements?

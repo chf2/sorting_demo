@@ -14,19 +14,19 @@ significantly from the ones posted here depending on your machine and the
 result of the array randomizer, but should they grow at roughly the same rate. 
 
 To begin, run the sorting_demo.rb script in your terminal. The demo will run
-3 timed trials for each sorting algorithm with randomized input of increasing
+3 timed trials for each sorting algorithm with a randomized input of increasing
 size, and compute the average time taken to sort the arrays. (You can change 
 these defaults in the script file in SortingDemo::run_performance_tests.)
 
- Let's start with something small: press any key twice to run Merge Sort 
- and Bubble Sort for 5 elements. The results here are fairly uninteresting:
- both should have run in similar time, and Merge Sort may even have performed
- more operations due to different constant factors. Do this again for 50
- elements the results should be similar. 
+Let's start with something small: press any key twice to run Merge Sort 
+and Bubble Sort for 5 elements. The results here are fairly uninteresting:
+both should have run in similar time, and Merge Sort may even have performed
+more operations due to different constant factors. Do this again for 50
+elements the results should be similar. 
 
- Now let's move on to 500 elements. 
+Now let's move on to 500 elements. 
 
- ```
+```
 Press any key to run Merge Sort for 500 elements:
 On average, Merge Sort took 0.0082 seconds.
 Press any key to run Bubble Sort for 500 elements:
@@ -51,7 +51,14 @@ sort to continue, this would start significantly affecting their experience.
 
 Lastly, run Merge Sort for 50,000 elements. On my machine, this still runs in 
 a reasonable amount of time. 
+
 ```
 Press any key to run Merge Sort for 50000 elements:
 On average, merge sort took 0.2796 seconds.
 ```
+
+Now, run Bubble Sort. 
+
+While this runs, let's think about a few things. Can you give a rough estimate
+of how long this will take, even with randomized input? What factors would go
+into whether your estimate would be high or low? 

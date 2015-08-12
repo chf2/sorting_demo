@@ -11,7 +11,7 @@ While one of the goals of algorithm analysis is to stay agnostic of implementati
 To begin, run the sorting_demo.rb script in your terminal. The demo will run 3 timed trials for each sorting algorithm with a randomized input of increasing size, and compute the average time taken to sort the arrays. As you go through this demo, note that your running times may vary significantly from mine depending on your machine and the result of the array randomizer, but should they grow at roughly the same rate. 
 
 
-Let's start with something small: press any key twice to run Merge Sort and Bubble Sort for 5 elements. The results here are fairly uninteresting: both should have run in similar time, and Merge Sort may even have performed more operations due to different constant factors. Do this again for 50 elements the results should be similar. 
+Let's start with something small: press any key twice to run Merge Sort and Bubble Sort for 5 elements. The results here are fairly uninteresting: the running time for both is so small that any differences are negligible. The story is similar in running this for the next batch, 50 elements. 
 
 Now let's move on to 500 elements. 
 
@@ -45,4 +45,4 @@ Lastly, run Bubble Sort on the 50,000 element inputs.
 
 Can you give a rough estimate of how long this will take, even with randomized input? What factors would go into whether your estimate would be high or low? Picking different algorithms to solve a problem can lead to significant differences in application performance at scale.
 
-When it's finished, go ahead and play around with the input size a bit more. You can specificy the default base and number of runs by modifying SortingDemo::run_performance_tests. Approximately how long will it take to run this for 100,000 elements, based on how long your machine took to run the other tests?
+When Bubble Sort has finished running, go ahead and play around with the input size a bit more. You can specificy the default base and number of runs by modifying SortingDemo::run_performance_tests. Approximately how long will it take to run this for 100,000 elements, based on how long your machine took to run the other tests?

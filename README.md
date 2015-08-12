@@ -45,4 +45,4 @@ Lastly, run Bubble Sort on the 50,000 element inputs.
 
 Can you give a rough estimate of how long this will take, even with randomized input? What factors would go into whether your estimate would be high or low? Picking different algorithms to solve a problem can lead to significant differences in application performance at scale.
 
-When Bubble Sort has finished running, go ahead and play around with the input size a bit more. You can specificy the default base and number of runs by modifying SortingDemo::run_performance_tests. Approximately how long will it take to run this for 100,000 elements, based on how long your machine took to run the other tests?
+When Bubble Sort has finished running, go ahead and play around with the input size a bit more. You can specificy the default base (as well as number of runs for averaging) by modifying `SortingDemo::run_performance_tests`. Approximately how long will it take to run this for 100,000 elements, based on how long your machine took to run the other tests?

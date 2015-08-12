@@ -1,13 +1,13 @@
-O(n^2) vs. O(n*lg(n)) -- Theory and Practice
+##`O(n^2)` vs. `O(n*lg(n))` -- Practical Examples
 
 It should be clear now that for any moderately large inputs, algorithms 
-that run in O(n*lg(n)) time will significantly outperform those that run 
-in O(n^2). 
+that run in `O(n*lg(n))` time will significantly outperform those that run 
+in `O(n^2)`. 
 
-![time_complexity](./nlgn_vs_n2.gif)
+![time_complexity](./compareNlogNQuadratic.png)
 
 While one of the goals of algorithm analysis is to stay agnostic of 
-implementaion details, let's briefly take a look at what this means in
+implementation details, let's briefly take a look at what this means in
 practice. Let's look at a timed comparison of Merge Sort and Bubble Sort
 for randomized array inputs of varying sizes. Your running times may vary 
 significantly from the ones posted here depending on your machine and the 
@@ -61,9 +61,10 @@ Now, run Bubble Sort.
 
 While this runs, let's think about a few things. Can you give a rough estimate
 of how long this will take, even with randomized input? What factors would go
-into whether your estimate would be high or low?
+into whether your estimate would be high or low? Hopefully this exercise 
+demonstrates how picking different algorithms to solve a problem can lead to
+significant differences in application performance at scale.
 
-50,000 elements is not that many. Even a relatively small real-world application
-that used suboptimal algorithms to process data will take a huge performance 
-hit. Go ahead and play around with the input size a bit more. Approximately how
-long will it take to run this for 100,000 elements?
+When it's finished, go ahead and play around with the input size a bit more. 
+Approximately how long will it take to run this for 100,000 elements, based on 
+how long your machine took to run the other tests?

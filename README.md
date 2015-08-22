@@ -11,38 +11,41 @@ While one of the goals of algorithm analysis is to stay agnostic of implementati
 To begin, run the sorting_demo.rb script in your terminal. The demo will run 3 timed trials for each sorting algorithm with a randomized input of increasing size, and compute the average time taken to sort the arrays. As you go through this demo, note that your running times may vary significantly from mine depending on your machine and the result of the array randomizer, but should they grow at roughly the same rate. 
 
 
-Let's start with something small: press any key twice to run Merge Sort and Bubble Sort for 5 elements. The results here are fairly uninteresting: the running time for both is so small that any differences are negligible. The story is similar in running this for the next batch, 50 elements. 
+Let's start with something small: press any key to run Merge Sort and Bubble Sort for 5 elements. The results here are fairly uninteresting: the running time for both is so small that any differences are negligible. The story is similar in running this for the next batch, 50 elements. 
 
 Now let's move on to 500 elements. 
 
 ```
-Press any key to run Merge Sort for 500 elements:
-On average, Merge Sort took 0.0082 seconds.
-Press any key to run Bubble Sort for 500 elements:
-On average, Bubble Sort took 0.0279 seconds.
+Press any key to run sorts for 500 elements:
+               user     system      total        real
+Merge:       0.000000   0.000000   0.000000 (  0.007961)
+Bubble:      0.080000   0.000000   0.080000 (  0.080944)
+Avg Merge:   0.000000   0.000000   0.000000 (  0.002654)
+Avg Bubble:  0.026667   0.000000   0.026667 (  0.026981)
 ```
 
 We're beginning to see some separation here between the performance of the two. In practice, though, this doesn't mean much to us; on my machine, both are still taking well under a second to run. What about 5000 elements?
 
 ```
-Press any key to run Merge Sort for 5000 elements:
-On average, Merge Sort took 0.0253 seconds.
-Press any key to run Bubble Sort for 5000 elements:
-On average, Bubble Sort took 2.7528 seconds.
+Press any key to run sorts for 5000 elements:
+               user     system      total        real
+Merge:       0.070000   0.000000   0.070000 (  0.071606)
+Bubble:      7.980000   0.000000   7.980000 (  7.996350)
+Avg Merge:   0.023333   0.000000   0.023333 (  0.023869)
+Avg Bubble:  2.660000   0.000000   2.660000 (  2.665450)
 ```
 
 We can see the times starting to properly diverge. At 5000 elements, Bubble Sort no longer feels instantaneous. If we were writing an application where the user needed to wait for the results of the sort to continue, this would start significantly affecting their experience.
 
-Run Merge Sort for 50,000 elements. On my machine, this still runs in 
-a reasonable amount of time. 
+Lastly, run the sorts for 50,000 elements. On my machine, Merge Sort still runs in a reasonable amount of time. 
 
 ```
-Press any key to run Merge Sort for 50000 elements:
-On average, merge sort took 0.2796 seconds.
+Press any key to run sorts for 50000 elements:
+               user     system      total        real
+Merge:       0.810000   0.000000   0.810000 (  0.819875)
+Bubble:
 ```
 
-Lastly, run Bubble Sort on the 50,000 element inputs. 
-
-Can you give a rough estimate of how long this will take, even with randomized input? What factors would go into whether your estimate would be high or low? Picking different algorithms to solve a problem can lead to significant differences in application performance at scale.
+Can you give a rough estimate of how long Bubble Sort will take, even with randomized input? What factors would go into whether your estimate would be high or low? Picking different algorithms to solve a problem can lead to significant differences in application performance at scale.
 
 When Bubble Sort has finished running, go ahead and play around with the input size a bit more. You can specificy the default base (as well as number of runs for averaging) by modifying `SortingDemo::run_performance_tests`. Approximately how long will it take to run this for 100,000 elements, based on how long your machine took to run the other tests?

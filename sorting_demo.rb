@@ -1,4 +1,6 @@
 require 'io/console'
+require 'benchmark'
+include Benchmark
 
 class SortingDemo
   # Bubble Sort: O(n^2)
@@ -59,13 +61,13 @@ class SortingDemo
       arrays_to_test << random_arr(size)
     end
 
-    print "\nPress any key to run Merge Sort for #{size} elements: "
+    puts "Press any key to run sorts for #{size} elements: "
     STDIN.getch
-    run_merge_sort(arrays_to_test)
-
-    print "Press any key to run Bubble Sort for #{size} elements: "
-    STDIN.getch
-    run_bubble_sort(arrays_to_test)
+    Benchmark.benchmark(CAPTION, 8, FORMAT, "Avg Merge: ", "Avg Bubble:") do |b|
+      merge = b.report("Merge:     ") { run_merge_sort(arrays_to_test) }
+      bubble = b.report("Bubble:    ") { run_bubble_sort(arrays_to_test) }
+      [merge/count, bubble/count]
+    end
   end
 
   def self.random_arr(n)
@@ -73,33 +75,22 @@ class SortingDemo
   end
 
   def self.run_bubble_sort(arrays)
-    bubble_time = 0
     arrays.each do |array|
       array_to_test = array.dup
-      start_time = Time.now
       bubble_sort(array_to_test)
-      bubble_time += Time.now - start_time
     end
-    avg_bubble = bubble_time / arrays.length 
-    puts "\nOn average, Bubble Sort took #{avg_bubble.round(4)} seconds.\n\n"
   end
 
   def self.run_merge_sort(arrays)
-    merge_time = 0
     arrays.each do |array|
       array_to_test = array.dup
-      start_time = Time.now
       merge_sort(array_to_test)
-      merge_time += Time.now - start_time
     end
-    avg_merge = merge_time / arrays.length
-    puts "\nOn average, Merge Sort took #{avg_merge.round(4)} seconds."
   end
 
   def self.run_performance_tests(multiplier = 5, rounds = 3)
     [1, 10, 100, 1000, 10000].each do |size|
       size *= multiplier
-      print "Running test for #{size} elements:"
       performance_test(size, rounds)
     end
   end

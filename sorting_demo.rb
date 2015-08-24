@@ -63,9 +63,9 @@ class SortingDemo
 
     puts "Press any key to run sorts for #{size} elements: "
     STDIN.getch
-    Benchmark.benchmark(CAPTION, 8, FORMAT, "Avg Merge: ", "Avg Bubble:") do |b|
-      merge = b.report("Merge:     ") { run_merge_sort(arrays_to_test) }
-      bubble = b.report("Bubble:    ") { run_bubble_sort(arrays_to_test) }
+    Benchmark.benchmark(CAPTION, 9, FORMAT, "AVG Merge:  ", "AVG Bubble: ") do |b|
+      merge = b.report("TTL Merge:  ") { run_merge_sort(arrays_to_test) }
+      bubble = b.report("TTL Bubble: ") { run_bubble_sort(arrays_to_test) }
       [merge/count, bubble/count]
     end
   end
